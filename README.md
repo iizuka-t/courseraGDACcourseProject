@@ -4,7 +4,7 @@ This task was performed as a requirement to fulfillment of the course "Getting  
 The task is to write an R script which reads the input files and processes the acquired data to generate a tidy dataset which summarizes the original dataset in a designated manner.
 
 ###Deliverables
-\#  | Item           | Description
+Item Number  | File           | Description
 --|----------------|---------------- 
 1.| README.md            | This file
 2.| run_analysis.R       | R script file performing designated anaysis
@@ -21,7 +21,7 @@ Downloaded from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2F
 The following files were used for analysis.
 For details, consult with the original dataset's README.txt.
 
-Item Number  |File                      |Description
+Item Number  | File                      | Description
 --|--------------------------|--------------------------
 1.|./activity_labels.txt     |6 activity types ("WALKING", "WALKING_UPSTAIRS", ...)
 2.|./features.txt            |561 features(\*1)
