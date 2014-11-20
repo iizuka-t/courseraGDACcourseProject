@@ -21,7 +21,7 @@ Downloaded from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2F
 The following files were used for analysis.
 For details, consult with the original dataset's README.txt.
 
-\#  |File                      |Description
+Item Number  |File                      |Description
 --|--------------------------|--------------------------
 1.|./activity_labels.txt     |6 activity types ("WALKING", "WALKING_UPSTAIRS", ...)
 2.|./features.txt            |561 features(\*1)

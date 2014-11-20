@@ -5,16 +5,16 @@ library(dplyr)
 
 ## Reading data
 ## Assume all necessary data available under "./getdata_projectfiles_UCI HAR Dataset".
-#X_train         <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/X_train.txt", quote="\"")
-#y_train         <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/y_train.txt", quote="\"")
-#subject_train   <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt", quote="\"")
-# 
-#X_test          <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/X_test.txt", quote="\"") 
-#y_test          <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/y_test.txt", quote="\"")
-#subject_test    <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/subject_test.txt", quote="\"") 
-#
-#activity_labels <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/activity_labels.txt", quote="\"", stringsAsFactors=F)
-#featuresIn      <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/features.txt", quote="\"",stringsAsFactors=F)
+X_train         <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/X_train.txt", quote="\"")
+y_train         <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/y_train.txt", quote="\"")
+subject_train   <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt", quote="\"")
+ 
+X_test          <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/X_test.txt", quote="\"") 
+y_test          <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/y_test.txt", quote="\"")
+subject_test    <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/subject_test.txt", quote="\"") 
+
+activity_labels <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/activity_labels.txt", quote="\"", stringsAsFactors=F)
+featuresIn      <- read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/features.txt", quote="\"",stringsAsFactors=F)
 #> head(featuresIn,4)
 #V1                V2
 #1  1 tBodyAcc-mean()-X
@@ -32,11 +32,11 @@ library(dplyr)
  subject_all <-rbind(subject_test,subject_train)    # subject ID
  names(subject_all) <-"Subject"
 
-# extracting observations regarding to mean and std  (Step 2)
+# extracting records regarding to mean and std  (Step 2)
  X_extracted <- X_all[, (col_for_mean|col_for_std) ]
  features_extracted <- featuresIn[[2]][(col_for_mean|col_for_std)]
 
-## activity list; replaced with more descriptive ones rather than numbers (Step 3)
+## activity list; replaced with more descriptive ones rather than simple numbers (Step 3)
  activity <- factor(unlist(y_all))  # factor requires atomic elements as input.
  levels(activity) <- activity_labels[,"V2"]
 
